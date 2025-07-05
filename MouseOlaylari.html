@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Mouse Olayları</title>
+    </head>
+    <body>
+        <h3>Click</h3>
+        <p id="p_bir">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt?</p>
+        <h3>Double click</h3>
+        <p id="p_iki">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt?</p>
+        <h3>Mouse Enter/Leave</h3>
+        <p id="p_uc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt?</p>
+        <h3>Mouse Down</h3>
+        <p id="p_dort">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt?</p>
+        <h3>Mouse Up</h3>
+        <p id="p_bes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt?</p>
+        <h3>Hover</h3>
+        <p id="p_alti">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt?</p>
+        <h3>Focus</h3>
+        <label>İsim:</label>
+        <input type="text" placeholder="İsim"><br>
+        <label>Soyisim:</label>
+        <input type="text" placeholder="Soyisim"><br>
+        <h3>On</h3>
+        <p id="p_yedi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt?</p>
+        <h3>Çoklu Olay</h3>
+        <p id="p_sekiz">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt?</p>
+        <script src="JS/jquery-3.7.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#p_bir").click(function () {
+                    $(this).hide(); // Bu paragrafa tıklandığında gizler
+                });
+                $("#p_iki").dblclick(function () {
+                    $(this).hide(); // Bu paragrafa çift tıklandığında gizler
+                });
+                $("#p_uc").mouseenter(function () {
+                    $(this).hide(); // Mouse bu paragrafa girdiğinde gizler
+                });
+                $("#p_uc").mouseleave(function () {
+                    //$(this).show(); // Mouse bu paragraftan çıktığında gösterir
+                    alert("Hoçça ğalın gidiom ben");
+                });
+                $("#p_dort").mousedown(function () {
+                    $(this).hide(); // Mouse bu paragrafa basıldığında uyarı verir
+                });
+                $("#p_bes").mouseup(function () {
+                    $(this).hide(); // Mouse bu paragrafa bırakıldığında uyarı verir
+                });
+                $("#p_alti").hover(function () {
+                    $(this).css("color","red") // Mouse bu paragrafa girdiğinde rengini kırmızı yapar
+                }, function () {
+                    $(this).css("color","black") // Mouse bu paragraftan çıktığında rengini siyah yapar
+                });
+                $("input").focus(function () {
+                    $(this).css("background-color", "#cccccc"); // Input alanına odaklandığında arka plan rengini sarı yapar
+                });
+                $("input").blur(function () {
+                    $(this).css("background-color", "#ffffff"); // Input alanından odak kaybolduğunda arka plan rengini beyaz yapar
+                });
+                $("#p_yedi").on("click", function () {
+                    $(this).hide(); // Bu paragrafa tıklandığında gizler
+                });
+                $("#p_sekiz").on({
+                    mouseenter: function(){
+                        $(this).css("background-color", "deeppink"); // Mouse bu paragrafa girdiğinde arka plan rengini değiştirir
+                    },
+                    mouseleave: function(){
+                        $(this).css("background-color", "bisquie"); // Mouse bu paragraftan çıktığında arka plan rengini beyaz yapar
+                    },
+                    click: function(){
+                        $(this).css("background-color","green"); // Bu paragrafa tıklandığında arka plan rengini yeşil yapar
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>
