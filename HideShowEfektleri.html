@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Hide / Show</title>
+        <style>
+            #p_ekran{
+                padding:15px;
+                border-radius: 5px;
+                background-color: darkseagreen;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="p_ekran">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, explicabo?</p>
+        <button id="btn_gizle">Gizle</button>
+        <button id="btn_goster">Göster</button>
+        <button id="btn_toggle">Toggle</button>
+        <script src="JS/jquery-3.7.1.min.js"></script>
+        <script>
+            /*$(document).ready(function () {
+                $("#btn_gizle").click(function () {
+                    $("#p_ekran").hide(1000); // Paragrafı gizler
+                });
+
+                $("#btn_goster").click(function () {
+                    $("#p_ekran").show(1000); // Paragrafı gösterir
+                });
+            });*/
+            $(document).ready(function () {
+                $("#btn_gizle").click(function(){
+                    $("#p_ekran").hide(1000, function() {
+                        //hide(süre,callback)
+                        alert("Paragraf gizlendi!"); // Paragraf gizlendikten sonra uyarı verir
+                    });
+                });
+
+                $("#btn_goster").click(function(){
+                    $("#p_ekran").show(1000, function() {
+                        $("#p_ekran").show(1000); // Paragraf gösterildikten sonra uyarı verir
+                    });
+                });
+                $("#btn_toggle").click(function(){
+                    $("#p_ekran").toggle(500); // Paragrafı gizler veya gösterir 
+                });
+            });
+        </script>
+    </body>
+</html>

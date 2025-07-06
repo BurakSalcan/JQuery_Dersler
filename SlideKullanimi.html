@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Slide Kullanımı</title>
+        <style>
+            h1,h2,h3,h4,h5,h6{margin: 0; padding: 0;}
+            body{
+                font-family: calibri;
+            }
+            .tasiyici{
+                width: 300px;
+            }
+            #baslik{
+                padding: 10px;
+                background-color: silver;
+                color: white;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border: 1px solid dimgrey;
+            }
+            #icerik{
+                border: 1px solid dimgrey;
+                border-top: none;
+                padding: 5px;
+                display: none; /* Başlangıçta görünmez */
+                height: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn_dur"> X </button>
+        <div id="tasiyici">
+            <div id="baslik"><h3>Sıkça Sorulan Soru 1</h3></div>
+            <div id="icerik">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aliquam alias hic natus iusto odio quo, ab in debitis. Blanditiis aperiam rerum perspiciatis cum? Itaque pariatur, assumenda voluptatibus temporibus natus aut excepturi optio unde ea, in, minima tempora quae sequi rerum sint officiis fuga dicta cum voluptates voluptate dolore quam!</div>
+        </div>
+        <script src="JS/jquery-3.7.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#baslik").click(function (){
+                    //$("#icerik").slideDown("slow"); // İçeriği aşağı kaydırarak göster
+                    //$("#icerik").slideUp();
+                    $("#icerik").slideToggle(5000); // İçeriği aşağı kaydırarak gösterir veya gizler
+                });
+                $("#btn_dur").click(function () {
+                    $("#icerik").stop(); // Animasyonu durdur
+                });
+            });
+        </script>
+    </body>
+</html>
